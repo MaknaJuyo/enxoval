@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enxoval - Banheiro</title>
+    <link rel="stylesheet" href="style/banheiro.css">
+</head>
+<body>
+    <div id="main-container">
+        <h1>Banheiro</h1>
+        <form action="banheiro.php" method="POST" id="confirm-form">
+            <div class="half-box">
+                <input type="checkbox" name="chuveiro" id="chuveiro" class="agreement">
+                <label for="chuveiro" class="agreement-label">Chuveiro</label>
+            </div>
+
+            <div class="half-box">
+                <input type="checkbox" name="pantufas" id="pantufas" class="agreement">
+                <label for="pantufas" class="agreement-label">Pantufas</label>
+            </div>       
+            
+            <div class="half-box">
+                <input type="checkbox" name="roupao" id="roupao" class="agreement">
+                <label for="roupao" class="agreement-label">Roupão</label>
+            </div>
+
+            <div class="half-box">
+                <input type="checkbox" name="toalhasBanho" id="toalhasBanho" class="agreement">
+                <label for="toalhasBanho" class="agreement-label">Toalhas de banho</label>
+            </div>   
+            
+            <div class="half-box">
+                <input type="checkbox" name="lixeira" id="lixeira" class="agreement">
+                <label for="lixeira" class="agreement-label">Lixeira</label>
+            </div>
+
+            <div class="half-box">
+                <input type="checkbox" name="toalhasRosto" id="toalhasRosto" class="agreement">
+                <label for="toalhasRosto" class="agreement-label">Toalhas de rosto</label>
+            </div>   
+            
+            <div class="half-box">
+                <input type="checkbox" name="saboneteira" id="saboneteira" class="agreement">
+                <label for="saboneteira" class="agreement-label">Saboneteira</label>
+            </div>
+
+            <div class="half-box">
+                <input type="checkbox" name="portaShampoo" id="portaShampoo" class="agreement">
+                <label for="portaShampoo" class="agreement-label">Porta shampoo</label>
+            </div>   
+            
+            <div class="half-box">
+                <input type="checkbox" name="portaEscova" id="portaEscova" class="agreement">
+                <label for="portaEscova" class="agreement-label">Porta escova</label>
+            </div>
+
+            <div class="half-box">
+                <input type="checkbox" name="bandeja" id="bandeja" class="agreement">
+                <label for="bandeja" class="agreement-label">Bandeja</label>
+            </div>  
+
+            <div class="full-box">
+                <input name="submit" id="btn-submit" type="submit" value="Concluir" onclick="alerta()">
+            </div>
+        </form>
+    </div>
+    <script>
+        function alerta(){
+            nMsg = Math.floor(Math.random() * 5);
+
+            if(nMsg == 1){
+                alert('Mais um item pro apartamentinho!')
+            } else if (nMsg == 2) {
+                alert('Hihi enxovalzão em!')
+            } else if (nMsg == 3) {
+                alert('Falta menos um item pra ter uma casinha maravilhosa!')
+            } else {
+                alert('Mais um? Hihi!')
+            }
+
+        }
+    </script>
+    
+
+    <script src="scripts.js"></script>
+</body>
+</html>
