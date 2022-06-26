@@ -3,108 +3,167 @@
 *{
     /* VARIÁVEIS */
 
-    --corCozinha1: #5a7458;
+    --corCozinha1: #5a7458; 
     --corCozinha2: #8DAA90;
-    --corCozinha2Hover: #6a7e6c;
+    --corCozinhaHover: #6a7e6c;
 
-    --corBanheiro: #222;
-    --corLavanderia: #222;
-    
-    --corSalaEstar: #222;
-    --corSalaJantar: #222;
+    --corBanheiro1: #4d3153;
+    --corBanheiro2: #a37cac;
+    --corBanheiroHover: #7b5c81;
 
-    --corQuarto: #222;
-    --corEscritorio: #222;
+    --corLavanderia1: #222;
+    --corLavanderia2: #222;
+    --corLavanderiaHover: #222;
+
+    --corSalaEstar1: #222;
+    --corSalaEstar2: #222;
+    --corSalaEstarHover: #222;
+
+    --corSalaJantar1: #222;
+    --corSalaJantar2: #222;
+    --corSalaJantarHover: #222;
+
+    --corQuarto1: #222;
+    --corQuarto2: #222;
+    --corQuartoHover: #222;
+
+    --corEscritorio1: #222;
+    --corEscritorio2: #222;
+    --corEscritorioHover: #222;
 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Helvetica, sans-serif;
-    color: var(--corCozinha1);
     border: none;
     background-repeat: no-repeat;
     border-bottom: 10px;
 }
 
+main {
+    height: calc(100vh - 8vh);
+    padding-top: 5vh;
+}
+
 /* MENU */
 
 a {
-    color: #FFF;
+    color: #fff;
     text-decoration: none;
     transition: 0.3s;
-}
-
-a:hover {
+  }
+  
+  a:hover {
     opacity: 0.7;
-}
-
-.logo {
+  }
+  
+  .logo {
     font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 4px;
-}
-
-nav {
-    display: flex; /* PARA COLOCAR A LISTA AO LADO DA LOGO */
-    justify-content: space-around; /* ESPAÇO AO REDOR SEJA METADE DO ESPAÇO ENTRE ELES*/
-    font-family: Helvetica, Arial, sans-serif;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    background-color: #23232e;
-    height: 8vh; /* vh é o tamanho da janela visualizada, 100vh é a Janela inteira*/
-}
-
-.nav-list{
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background: #23232e;
+    height: 8vh;
+  }
+  
+  .nav-list {
     list-style: none;
     display: flex;
-}
-
-.nav-list li {
+  }
+  
+  .nav-list li {
     letter-spacing: 3px;
     margin-left: 32px;
-    color: #FFF;
-}
-
-.mobile-menu div {
-   width: 32px; 
-   height: 2px;
-   background: #FFF;
-   margin: 8px;
-}
-
-.mobile-menu {
+  }
+  
+  .mobile-menu {
     display: none;
     cursor: pointer;
+  }
+  
+  .mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+  }
+  
+  @media (max-width: 999px) {
+    body {
+      overflow-x: hidden;
+    }
+    .nav-list {
+      position: absolute;
+      top: 8vh;
+      right: 0;
+      width: 50vw;
+      height: 92vh;
+      background: #23232e;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in;
+      z-index: 9999;
+    }
+    .nav-list li {
+      margin-left: 0;
+      opacity: 0;
+    }
+    .mobile-menu {
+      display: block;
+    }
+  }
+  
+  .nav-list.active {
+    transform: translateX(0);
+  }
+  
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+  }
+  
+  .mobile-menu.active .line2 {
+    opacity: 0;
+  }
+  
+  .mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+  }
+
+/* INDEX */
+
+#index{
+  background-color: #4d3153;
 }
 
-@media (max-width: 999px) {
-    body {
-        overflow-x: hidden;
-    }
-    .nav-list {
-        position: absolute;
-        top: 0vh;
-        right: 0;
-        width: 50vw;
-        height: 100vh;
-        background: #23232e;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        transform: translateX(100%); 
-    }
+.h1Index{
+  color: white;
+  width: 25vw;
+  padding-top: 30vh;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: 0px auto 10px auto;
 
-    .nav-list {
-        margin-left: 0;
-        opacity: 0;
-    }
-
-    .mobile-menu {
-        display: block;
-    }
-
-    .nav-list.active {
-       transform: translateX(0); 
-    }
+  font-size: 100px;
 }
 
 /*#################################*/
@@ -147,35 +206,37 @@ h1 {
 #cozinha {
     background-image: url('https://wallpaperaccess.com/full/6723863.jpg');
     background-color: var(--corCozinha1);
-}
-
-#banheiro {
-    background-image: url('../img/banheiro2.jfif');
+    color: var(--corCozinha1);
 }
 
 #lavanderia {
     background-color: #86496b;
-    background-image: url('')
+    background-image: url('');
+    color: var(--corLavanderia1);
 }
 
 #salaJantar {
     background-color: #86496b;
-    background-image: url('')
+    background-image: url('');
+    color: var(--corSalaJantar1);
 }
 
 #salaEstar {
     background-color: #86496b;
-    background-image: url('')
+    background-image: url('');
+    color: var(--corSalaEstar1);
 }
 
 #quarto {
     background-color: #86496b;
-    background-image: url('')
+    background-image: url('');
+    color: var(--corQuarto1);
 }
 
 #escritorio {
     background-color: #86496b;
-    background-image: url('')
+    background-image: url('');
+    color: var(--corEscritorio1);
 }
 
 .main-container {
@@ -185,7 +246,7 @@ h1 {
     padding-top: 15px;
     padding-left: 50px;
     padding-right: 50px;
-    margin: 10px auto 10px auto;
+    margin: 0px auto 10px auto;
     background-color: #FFF;
     border-radius: 10px;
     opacity: 90%;
@@ -236,8 +297,8 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: var(--corCozinha2Hover);
-    color: var(--corCozinha2Hover);
+    background-color: var(--corCozinhaHover);
+    color: var(--corCozinhaHover);
 }
 
 .submitIcon:before{
@@ -297,3 +358,32 @@ button span {
 .cbox:checked::before{
     opacity: 1;
 }
+
+
+/* CORES BANHEIRO */
+
+.cboxBanheiro{
+  border-color: var(--corBanheiro1)
+}
+
+.cboxBanheiro:checked{
+  background-color: var(--corBanheiro2);
+}
+
+#banheiro {
+  background-color: var(--corBanheiro1);
+  background-image: url('../img/banheiro.png');
+  color: var(--corBanheiro1);
+}
+
+button[class="buttonBanheiro"] {
+  background-color: var(--corBanheiro2);
+  color: var(--corBanheiro1);
+  border-color: var(--corBanheiro1);
+}
+
+button[class="buttonBanheiro"]:hover {
+  background-color: var(--corBanheiroHover);
+  color: var(--corBanheiroHover);
+}
+

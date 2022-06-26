@@ -130,7 +130,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css"/> 
+    <link rel="stylesheet" href="style/cozinha.css" /> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">  
@@ -149,13 +149,13 @@
         </div>
         <ul class="nav-list">
           <li><a href="index.php">Início</a></li>
-          <li><a href="cozinha.php">Cozinha</a></li>
-          <li><a href="banheiro.php">Banheiro</a></li>
-          <li><a href="lavanderia.php">Lavanderia</a></li>
-          <li><a href="salaJantar.php">Sala de jantar</a></li>
-          <li><a href="salaEstar.php">Sala de estar</a></li>
-          <li><a href="quarto.php">Quarto</a></li>
-          <li><a href="escritorio.php">Escritório</a></li>
+          <li><a href="#">Cozinha</a></li>
+          <li><a href="#">Banheiro</a></li>
+          <li><a href="#">Lavanderia</a></li>
+          <li><a href="#">Sala de jantar</a></li>
+          <li><a href="#">Sala de estar</a></li>
+          <li><a href="#">Quarto</a></li>
+          <li><a href="#">Escritório</a></li>
         </ul>
       </nav>
     </header>

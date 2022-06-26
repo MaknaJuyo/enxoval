@@ -8,48 +8,42 @@
     }
 
     function checkBoxGetId($cCam){
-        if($cCam == 'Chuveiro') return 'chuveiro'; 
-        if($cCam == 'Pantufas') return 'pantufas';
-        if($cCam == 'Roupao') return 'roupao';
-        if($cCam == 'Toalhas de banho') return 'toalhasBanho';
-        if($cCam == 'Lixeira') return 'lixeira';
-        if($cCam == 'Toalhas de rosto') return 'toalhasRosto';
-        if($cCam == 'Saboneteira') return 'saboneteira';
-        if($cCam == 'Porta shampoo') return 'portaShampoo';
-        if($cCam == 'Porta escova') return 'portaEscova';
-        if($cCam == 'Bandeja') return 'bandeja';
+        if($cCam == 'Lava e seca')     return 'lavaSeca';
+        if($cCam == 'Varal')           return 'varal';
+        if($cCam == 'Aspirador de pó') return 'aspirador';
+        if($cCam == 'Ferro de passar') return 'ferro';
+        if($cCam == 'Tábua de passar') return 'tabua';
+        if($cCam == 'Escada')          return 'escada';
+        if($cCam == 'Cesto')           return 'cesto';
+        if($cCam == 'Lixeira')         return 'lixeira';
     }
 
     include_once('config.php');
 
     if(isseT($_POST['submit'])){
-        $comodo = 'Banheiro';
+        $comodo = 'Lavanderia';
 
-        $chuveiro     = checkBoxData('chuveiro');
-        $pantufas     = checkBoxData('pantufas');
-        $roupao       = checkBoxData('roupao');
-        $toalhasBanho = checkBoxData('toalhasBanho');
-        $lixeira      = checkBoxData('lixeira');
-        $toalhasRosto = checkBoxData('toalhasRosto');
-        $saboneteira  = checkBoxData('saboneteira');
-        $portaShampoo = checkBoxData('portaShampoo');
-        $portaEscova  = checkBoxData('portaEscova');
-        $bandeja      = checkBoxData('bandeja');
+        $lavaSeca  = checkBoxData('lavaSeca');
+        $varal     = checkBoxData('varal');
+        $aspirador = checkBoxData('aspirador');
+        $ferro     = checkBoxData('ferro');
+        $tabua     = checkBoxData('tabua');
+        $escada    = checkBoxData('escada');
+        $cesto     = checkBoxData('cesto');
+        $lixeira   = checkBoxData('lixeira');
 
-        $result = mysqli_query($conexao,"UPDATE HENX SET TEM = '$chuveiro'     WHERE (COM = '$comodo' and ITE = 'Chuveiro');");
-        $result = mysqli_query($conexao,"UPDATE HENX SET TEM = '$pantufas'     WHERE (COM = '$comodo' and ITE = 'Pantufas');");
-        $result = mysqli_query($conexao,"UPDATE HENX SET TEM = '$roupao'       WHERE (COM = '$comodo' and ITE = 'Roupao');");
-        $result = mysqli_query($conexao,"UPDATE HENX SET TEM = '$toalhasBanho' WHERE (COM = '$comodo' and ITE = 'Toalhas de banho');");
-        $result = mysqli_query($conexao,"UPDATE HENX SET TEM = '$lixeira'      WHERE (COM = '$comodo' and ITE = 'Lixeira');");
-        $result = mysqli_query($conexao,"UPDATE HENX SET TEM = '$toalhasRosto' WHERE (COM = '$comodo' and ITE = 'Toalhas de rosto');");
-        $result = mysqli_query($conexao,"UPDATE HENX SET TEM = '$saboneteira'  WHERE (COM = '$comodo' and ITE = 'Saboneteira');");
-        $result = mysqli_query($conexao,"UPDATE HENX SET TEM = '$portaShampoo' WHERE (COM = '$comodo' and ITE = 'Porta shampoo');");
-        $result = mysqli_query($conexao,"UPDATE HENX SET TEM = '$portaEscova'  WHERE (COM = '$comodo' and ITE = 'Porta escova');");
-        $result = mysqli_query($conexao,"UPDATE HENX SET TEM = '$bandeja'      WHERE (COM = '$comodo' and ITE = 'Bandeja');");
+        $result = mysqli_query($conexao,"UPDATE HENX SET TEM = '$lavaSeca'  WHERE (COM = '$comodo' and ITE = 'Lava e seca');");
+        $result = mysqli_query($conexao,"UPDATE HENX SET TEM = '$varal'     WHERE (COM = '$comodo' and ITE = 'Varal');");
+        $result = mysqli_query($conexao,"UPDATE HENX SET TEM = '$aspirador' WHERE (COM = '$comodo' and ITE = 'Aspirador de pó');");
+        $result = mysqli_query($conexao,"UPDATE HENX SET TEM = '$ferro'     WHERE (COM = '$comodo' and ITE = 'Ferro de passar');");
+        $result = mysqli_query($conexao,"UPDATE HENX SET TEM = '$tabua'     WHERE (COM = '$comodo' and ITE = 'Tábua de passar');");
+        $result = mysqli_query($conexao,"UPDATE HENX SET TEM = '$escada'    WHERE (COM = '$comodo' and ITE = 'Escada');");
+        $result = mysqli_query($conexao,"UPDATE HENX SET TEM = '$cesto'     WHERE (COM = '$comodo' and ITE = 'Cesto');");
+        $result = mysqli_query($conexao,"UPDATE HENX SET TEM = '$lixeira'   WHERE (COM = '$comodo' and ITE = 'Lixeira');");
         
    }
 
-   $sql = "SELECT * FROM HENX WHERE COM = 'Banheiro'";
+   $sql = "SELECT * FROM HENX WHERE COM = 'Lavanderia'";
 
    $result = $conexao->query($sql);
 
@@ -66,7 +60,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">  
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Enxovalzito - Banheiro</title>       
+    <title>Enxovalzito - Lavanderia</title>       
   </head>
 
   <body>
@@ -90,11 +84,11 @@
         </ul>
       </nav>
     </header>
-    <main id="banheiro">
+    <main id="lavanderia">
 
     <div class="main-container">
-        <h1>Banheiro</h1>
-        <form id="register-form" method="POST" action="banheiro.php">   
+        <h1>Lavanderia</h1>
+        <form id="register-form" method="POST" action="lavanderia.php">   
             <?php
                 // Carrega os dados
                 while($user_data = mysqli_fetch_assoc($result)){
@@ -110,15 +104,15 @@
                     <div class="half-box">
                         <input type="checkbox" id="'.checkBoxGetId($user_data['ITE']).
                         '" name="'.checkBoxGetId($user_data['ITE']).
-                        '" class="cbox cboxBanheiro" onclick="alterarProgresso()" '
+                        '" class="cbox cboxLavanderia" onclick="alterarProgresso()" '
                         .$cChecked.'>
                         <label for="'.checkBoxGetId($user_data['ITE']).'">'.$user_data['ITE'].'</label>
                     </div>';
                 }   
             ?> 
             <div class="full-box">
-                <button name="submit" class="buttonBanheiro" type="submit" id="btn-submit" title="Registrar o enxoval do apartamentinho">
-                   <div class="submitIcon buttonBanheiro"></div>      
+                <button name="submit" class="buttonLavanderia" type="submit" id="btn-submit" title="Registrar o enxoval do apartamentinho">
+                   <div class="submitIcon buttonLavanderia"></div>      
                 </button>
             </div>
 
